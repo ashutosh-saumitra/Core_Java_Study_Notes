@@ -1,0 +1,7 @@
+# Ignore Java class files
+*.class
+# Ignore IDE specific files
+*.classpath
+*.project
+.settings/
+bin/
