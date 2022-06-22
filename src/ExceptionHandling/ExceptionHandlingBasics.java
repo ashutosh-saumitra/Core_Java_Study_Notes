@@ -130,5 +130,33 @@ public class ExceptionHandlingBasics {
 		 *  7- There should not be any statement between TRY, CATCH and FINALLY.
 		 * 			
 		 * */
+
+		// Example 1
+		System.out.println(getNum(5));
+		// Exxample 2
+		System.out.println(getNum(5, 10));
+	}
+	private static int getNum(int a){
+		try{
+			System.out.println("inside try");
+			return a;
+		}catch(Exception e){
+			System.out.println("inside catch: "+e.getMessage());
+		}finally{
+			System.out.println("inside finally");
+			return a*a; // return statement present in finally block will override the return statement of try block
+		}
+	}
+
+	private static int getNum(int a, int b){
+		try{
+			System.out.println("inside try");
+			System.exit(0); // program will exit immediately without going to finally block
+		}catch(Exception e){
+			System.out.println("inside catch: "+e.getMessage());
+		}finally{
+			System.out.println("inside finally");
+			return a*a;
+		}
 	}
 }
